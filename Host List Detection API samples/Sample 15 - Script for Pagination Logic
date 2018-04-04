@@ -1,0 +1,29 @@
+Sample 15 - Script for Pagination Logic
+
+The following script illustrates how it’s possible for a third party application to retrieve paginated results using the host list detection API. 
+#!/bin/sh
+
+BASE_URL='https://qualysapi.qualys.com'
+OUTPUT_FILENAME='detection'
+USERNAME='username'
+PASS='password'
+N='01'
+
+# Specify filtering parameters here (Remember to URL encode os_pattern, if specified):
+
+#PARAMETER="&show_igs=1&include_search_list_titles=QID+45038&os_pattern=%5Cd%2B"
+
+echo "${BASE_URL}/api/2.0/fo/asset/host/vm/detection/?action=list${PARAMETER}"
+curl -H 'X-Requested-With: curl example QWEB 6.17' -k -u "${USERNAME}:${PASS}" "${BASE_URL}/api/2.0/fo/asset/host/vm/detection/?action=list${PARAMETER}" > "${OUTPUT_FILENAME}-${N}.xml"
+
+while grep '<URL><!\[CDATA\[https:\/\/.*qualys\.com' "${OUTPUT_FILENAME}-${N}.xml"
+do
+  NEXT_URL=`grep "<URL>" "${OUTPUT_FILENAME}-${N}.xml" | sed s/'^.*<URL><!\[CDATA\['//g | sed s/'\]\]\>\<\/URL\>'//g`
+
+  N=`expr ${N} + 1`
+  if [[ ${N} -lt 10 ]] ; then N=`echo "0"${N}` ; fi
+  if [[ ${N} -gt 99 ]] ; then echo "bailing out after fetching the first 99 batches of data"; exit 0; fi
+
+  echo "next url = ${NEXT_URL}"
+  curl -H 'X-Requested-With: curl example QWEB 6.17' -k -u "${USERNAME}:${PASS}" "${NEXT_URL}" > "${OUTPUT_FILENAME}-${N}.xml"
+done
