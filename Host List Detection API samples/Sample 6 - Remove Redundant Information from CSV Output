@@ -1,0 +1,13 @@
+Sample 6 - Remove Redundant Information from CSV Output
+When “suppress_duplicated_data_from_csv=1” is provided, host details will not be repeated in each detection line. In other words, the duplicated data is suppressed. The output is trimmed down to remove the redundant information.
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&output_format=CSV&suppress_duplicated_data_from_csv=1"
+
+Sample output with redundant information removed:
+----BEGIN_RESPONSE_HEADER_CSV
+----END_RESPONSE_HEADER_CSV
+----BEGIN_RESPONSE_BODY_CSV
+"Host ID","IP Address","Tracking Method","Operating System","DNS Name","Netbios Name","Last Scan Datetime","OS CPE","Last VM Scanned Date","Last VM Scanned Duration","Last VM Auth Scanned Date","Last VM Auth Scanned Duration","Last PC Scanned Date","QID","Type","Port","Protocol","FQDN","SSL","Instance","Status","Severity","First Found Datetime","Last Found Datetime","Last Test Datetime","Last Update Datetime","Last Fixed Datetime","Results","Ignored","Disabled","Times Found","Service"
+"5641287","10.10.10.28","IP","Windows XP","xpsp3-10-28","XPSP3-10-28","2016-12-20T20:59:05Z",,"2016-12-20T20:59:05Z","260",,,"2016-12-20T20:46:17Z",,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,"38094","Potential","3389","tcp",,"0",,"Active","2","2016-09-27T09:13:49Z","2016-12-20T20:59:05Z","2016-12-20T20:59:05Z","2016-12-20T20:52:34Z",,"Detected service win_remote_desktop and os WINDOWS XP SERVICE PACK 2-3","0","0","48",
+,,,,,,,,,,,,,"38252","Confirmed",,,,"0",,"Active","2","2016-09-27T09:13:49Z","2016-12-20T20:59:05Z","2016-12-20T20:59:05Z","2016-12-20T20:52:34Z",,"Detected on TCP port 23.","0","0","48",
+...
