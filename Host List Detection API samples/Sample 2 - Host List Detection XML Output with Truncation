@@ -1,0 +1,17 @@
+Sample 2 - Host List Detection XML Output with Truncation
+A truncated response is returned when the API request returns more host records than the truncation limit. In this sample, the truncation limit is set to 100 host records. 
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&truncation_limit=100"
+
+The Warning message in the XML output (shown below) indicates the URL you need to use to request the next 100 host records.
+...
+          </DETECTION>
+        </DETECTION_LIST>
+      </HOST>
+    </HOST_LIST>
+    <WARNING>
+      <CODE>1980</CODE>
+      <TEXT>100 record limit exceeded. Use URL to get next batch of results.</TEXT>
+      <URL><![CDATA[https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&truncation_limit=100&id_min=5641289]]></URL>
+    </WARNING>
+  </RESPONSE>
+</HOST_LIST_VM_DETECTION_OUTPUT>
