@@ -1,0 +1,11 @@
+Sample 12 - Filter by Scan Processed Date
+
+Request a list of hosts with vulnerability scan results processed before or after a certain date/time. Use the “vm_processed_before” and “vm_processed_after” parameters.
+Return hosts with vulnerability scans processed after November 5th: 
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&vm_processed_after=2016-11-05"
+
+Return hosts with vulnerability scans processed before December 31st:
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&vm_processed_before=2016-12-31"
+
+You can also use these date filters together:
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&vm_processed_after=2016-11-05&vm_processed_before=2016-12-31"
