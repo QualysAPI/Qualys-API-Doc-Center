@@ -1,0 +1,6 @@
+Sample 10 - Scanned Hosts in IP Range with Certain QIDs
+
+Request a list of VM scanned hosts that have IP addresses in the range 10.10.10.10-10.10.10.80 and also QIDs included in the search list titled “High Severity”:
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&include_search_list_titles=High+Severity&ips=10.10.10.10-10.10.10.80"
+
+Only hosts that match both filters will be included in the host list output. If a host has an IP in the range 10.10.10.10-10.10.10.80 and the host does not have detected QIDs in “High Severity” then the host will not be listed in the output.
