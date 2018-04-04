@@ -1,0 +1,11 @@
+Sample 4 - Host List Detection CSV Output with Truncation
+A truncated response is returned when the API request returns more host records than the truncation limit - in this case the limit is set to 2. 
+curl -u "username:password" -H "X-Requested-With: curl"
+"https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&output_format=CSV&truncation_limit=2"
+
+The FOOTER_CSV section in the output (shown below) indicates the URL you need to use to request the next 2 host records.
+...
+----BEGIN_RESPONSE_FOOTER_CSV
+"Status Message","Next ID","Next URL"
+"Truncated","5641289","https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&output_format=CSV&truncation_limit=2&id_min=5641289"
+----END_RESPONSE_FOOTER_CSV
