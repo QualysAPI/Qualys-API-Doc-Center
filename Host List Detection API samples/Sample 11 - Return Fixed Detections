@@ -1,0 +1,9 @@
+Sample 11 - Return Fixed Detections
+
+By default, when no specific parameters are passed to this API, the output contains detections with New, Active or Re-Opened <STATUS> only. The reason for this is because the primary goal of the detection API is to return the most updated vulnerability status for the hosts. By using the parameter “status=Fixed” like in the example below, it is possible to get the Fixed vulnerabilities in the output:
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&status=Fixed"
+
+The “status” parameter can also be used to filter the output to only include certain status levels. For example:
+status=Fixed only returns Fixed detections
+status=New,Fixed only returns New and Fixed detections
+status=New,Fixed,Active,Re-Opened returns All detections
