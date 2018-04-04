@@ -1,4 +1,5 @@
 Sample 7 - Fetch region info for EC2 assets
+
 API request:
 curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&host_metadata=ec2&host_metadata_fields=region"
 
