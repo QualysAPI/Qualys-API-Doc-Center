@@ -1,0 +1,5 @@
+Sample 13 - Filter by Scan End Date
+
+Request a list of hosts with vulnerability scans that ended before or after a certain date/time. Use the “vm_scan_date_before” and “vm_scan_date_after” parameters. 
+Starting with version 8.9, host scan time is based on when a scan finished, not when the scan started. We get this information from QID 45038 “Host Scan Time”. If this QID was not included in the vulnerability scan then we’ll use the scan start date/time. In the following example, I want to return hosts with vulnerability scans that ended after December 19th and before December 21st.
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&vm_scan_date_after=2016-12-19&vm_scan_date_before=2016-12-21"
