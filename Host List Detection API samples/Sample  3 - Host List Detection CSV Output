@@ -1,4 +1,5 @@
 Sample 3 - Host List Detection CSV Output
+
 By default, the output of the detection API is returned in XML, but when the parameter “output_format=CSV” is provided, then the output is returned in a comma separated value (csv) format. This format is convenient because it can be opened as a spreadsheet.
 curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&output_format=CSV"
 
