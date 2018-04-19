@@ -1,0 +1,61 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST 
+"action=list&details=All&host_metadata=ec2&host_metadata_fields=region,accountId,instanceId" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/"
+
+XML output:
+<!DOCTYPE HOST_LIST_OUTPUT SYSTEM "https://qualysapi.qualys.com/api/2.0/fo/asset/host/host_list_output.dtd">
+<HOST_LIST_OUTPUT>
+  <RESPONSE>
+    <DATETIME>2016-11-15T09:50:46Z</DATETIME>
+    <HOST_LIST>
+       <HOST>
+       <ID>135151</ID>
+       <IP>10.97.5.247</IP>
+       <TRACKING_METHOD>EC2</TRACKING_METHOD>
+       <DNS><![CDATA[i-0bb87c3281243cdfd]]></DNS>
+       <EC2_INSTANCE_ID><![CDATA[i-0bb87c3281243cdfd]]></EC2_INSTANCE_ID>
+       <OS><![CDATA[Amazon Linux 2016.09]]></OS>
+       <METADATA>
+         <EC2>
+           <ATTRIBUTE>
+             <NAME><![CDATA[latest/dynamic/instance-
+              identity/document/region]]></NAME>
+             <LAST_STATUS>Success</LAST_STATUS>
+             <VALUE><![CDATA[us-east-1]]></VALUE>
+             <LAST_SUCCESS_DATE>2017-03-21T13:39:38Z</LAST_SUCCESS_DATE>
+             <LAST_ERROR_DATE></LAST_ERROR_DATE>
+             <LAST_ERROR><![CDATA[]]></LAST_ERROR>
+           </ATTRIBUTE>
+           <ATTRIBUTE>
+             <NAME><![CDATA[latest/dynamic/instance-
+              identity/document/instanceId]]></NAME>
+             <LAST_STATUS>Success</LAST_STATUS>
+             <VALUE><![CDATA[i-0bb87c3281243cdfd]]></VALUE>
+             <LAST_SUCCESS_DATE>2017-03-21T13:39:38Z</LAST_SUCCESS_DATE>
+             <LAST_ERROR_DATE></LAST_ERROR_DATE>
+             <LAST_ERROR><![CDATA[]]></LAST_ERROR>
+           </ATTRIBUTE>
+           <ATTRIBUTE>
+             <NAME><![CDATA[latest/dynamic/instance-
+              identity/document/accountId]]></NAME>
+             <LAST_STATUS>Success</LAST_STATUS>
+             <VALUE><![CDATA[205767712438]]></VALUE>
+             <LAST_SUCCESS_DATE>2017-03-21T13:39:38Z</LAST_SUCCESS_DATE>
+             <LAST_ERROR_DATE></LAST_ERROR_DATE>
+             <LAST_ERROR><![CDATA[]]></LAST_ERROR>
+           </ATTRIBUTE>
+         </EC2>
+       </METADATA>
+       <LAST_VULN_SCAN_DATETIME>2017-03-
+        21T13:39:38Z</LAST_VULN_SCAN_DATETIME>
+       <LAST_VM_SCANNED_DATE>2017-03-21T13:39:38Z</LAST_VM_SCANNED_DATE>
+       <LAST_VM_SCANNED_DURATION>229</LAST_VM_SCANNED_DURATION>
+       <LAST_VM_AUTH_SCANNED_DATE>2017-03-
+        21T13:39:38Z</LAST_VM_AUTH_SCANNED_DATE>
+       <LAST_VM_AUTH_SCANNED_DURATION>229</LAST_VM_AUTH_SCANNED_DURATION>
+       <LAST_COMPLIANCE_SCAN_DATETIME>2017-03-
+        21T13:21:51Z</LAST_COMPLIANCE_SCAN_DATETIME>
+     </HOST>
+    </HOST_LIST>
+  </RESPONSE>
+</HOST_LIST_OUTPUT>
