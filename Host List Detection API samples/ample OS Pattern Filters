@@ -1,0 +1,29 @@
+Important Note: The regular expression string you provide in the “os_pattern” parameter must follow the PCRE standard and it must be URL encoded to make sure that special characters are correctly passed to the filter.
+OS Name “Beginning With”
+To list hosts in the range 10.10.10.1-10.10.10.100 which have an operating system beginning with “Windows”, you can use the following URL:
+https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&ips=10.10.10.1-10.10.10.100&os_pattern=%5EWindows
+
+where “%5EWindows” is the URL encoded version of the PCRE regular expression “^Windows”. Any host which was scanned for vulnerabilities and which has an operating system starting with “Windows” will be included in the host list output.
+OS Name “Ending With”
+To list hosts in the range 10.10.10.1-10.10.10.100 which have the operating system name “FreeBSD”, you can use the following URL:
+https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&ips=10.10.10.1-10.10.10.100&os_pattern=BSD%24
+
+where “BSD%24” is the URL encoded version of the PCRE regular expression “BSD$”. For the above sample, hosts which are in the range 10.10.10.1-10.10.10.100 and which have an operating system ending in BSD, such as FreeBSD, will be included in the host list output.
+OS Name with Simple Pattern
+To list hosts which have an operating system name containing “2003” you can use the following URL:
+https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&os_pattern=2003
+
+Any host which was scanned for vulnerabilities and which has an operating system including the string “2003” will be included in the host list output.
+OS Name with More Complex Pattern
+To list hosts in the range 10.10.10.1-10.10.10.100 which have an operating system name containing a more complex string like “Windows 64 bit” you could use the OS pattern shown in the following URL:
+https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&ips=10.10.10.1-10.10.10.100&os_pattern=%5EWin.*64%20bit.*Service%20Pack%201%24
+
+where “%5EWin.*64%20bit.*Service%20Pack%201%24” is the URL encoded version of the PCRE regular expression “^Win.*64+bit.*Service+Pack+1”. The above regular expression matches OS string starting with “Win”, containing “64 bit” and ending with “Service Pack 1”. Possible matches include hosts in the range 10.10.10.1-10.10.10.100 which have some flavors of Windows 64 Bit Service Pack 1 such as these:
+Windows XP 64 bit Edition Service Pack 1
+Windows 2008 Core 64 bit Edition Service Pack 1
+Windows 2003 Server 64 bit Edition AD Service Pack 1
+Hosts with No OS
+To list hosts with no operating system defined, you can use the following URL:
+https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&ips=10.10.10.1-10.10.10.100&os_pattern=%5E%24
+
+where “%5E%24” is the URL encoded version of the PCRE regular expression “^$”. The above request will list all hosts in the user account that do not have an operating system defined.
