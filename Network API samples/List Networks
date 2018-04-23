@@ -1,0 +1,22 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With: Curl" "https://qualysapi.qualys.com/api/2.0/fo/network/?action=list&ids=7343,7345,7350"
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NETWORK_LIST SYSTEM "https://qualysapi.qualys.com/network_list_output.dtd">
+<RESPONSE>
+  <DATETIME>2013-07-28T01:06:45Z</DATETIME>
+  <NETWORK_LIST>
+    <NETWORK>
+      <ID>7343</ID>
+      <NAME><![CDATA[My New Network]]></TITLE>
+      <SCANNER_APPLIANCE_LIST>
+        <SCANNER_APPLIANCE>
+          <ID>1234</ID>
+          <FRIENDLY_NAME><![[CDATA[abc123]]></FRIENDLY_NAME>
+        </SCANNER_APPLIANCE>
+      </SCANNER_APPLIANCE_LIST>
+    </NETWORK>
+    ...
+  </NETWORK_LIST>
+</RESPONSE>
