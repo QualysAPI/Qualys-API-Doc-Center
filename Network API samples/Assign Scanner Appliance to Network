@@ -1,0 +1,24 @@
+API request:
+curl -k -u "USERNAME:PASSWORD" -H "X-Requested-With: test" -d action=assign_network_id&appliance_id=506&network_id=1002" "https://qualysapi.qualys.com/api/2.0/fo/appliance/"
+
+XML output:
+The simple return DTD is used. The response will look like this, if successful:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SIMPLE_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/simple_return.dtd">
+<SIMPLE_RETURN>
+  <RESPONSE>
+    <DATETIME>2013-12-16T22:50:49Z</DATETIME>
+    <TEXT>Success: Network ID=[1103] assigned to Appliance with ID=[506]</TEXT>
+  </RESPONSE>
+</SIMPLE_RETURN>
+
+Or, if unsuccessful, the response might look like this:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SIMPLE_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/simple_return.dtd">
+<SIMPLE_RETURN>
+  <RESPONSE>
+    <DATETIME>2013-12-16T22:53:41Z</DATETIME>
+    <CODE>1905</CODE>
+    <TEXT>parameter network_id has invalid value: 1103 (No such network ID)</TEXT>
+  </RESPONSE>
+</SIMPLE_RETURN>
