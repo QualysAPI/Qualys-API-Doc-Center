@@ -1,0 +1,18 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With: Curl" -d "action=create&name=My+Network" "https://qualysapi.qualys.com/api/2.0/fo/network/"
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SIMPLE_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/simple_return.dtd">
+<SIMPLE_RETURN>
+  <RESPONSE>
+    <DATETIME>2014-01-14T04:37:24Z</DATETIME>
+    <TEXT>Network created with ID</TEXT>
+    <ITEM_LIST>
+      <ITEM>
+        <KEY>id</KEY>
+        <VALUE>1103</VALUE>
+      </ITEM>
+    </ITEM_LIST>
+  </RESPONSE>
+</SIMPLE_RETURN>
