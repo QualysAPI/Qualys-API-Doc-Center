@@ -1,0 +1,22 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With: Curl" -d "id=1130&action=update&name=Network+123" "https://qualysapi.qualys.com/api/2.0/fo/network/"
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SIMPLE_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/simple_return.dtd">
+<SIMPLE_RETURN>
+  <RESPONSE>
+    <DATETIME>2014-01-20T06:17:06Z</DATETIME>
+    <TEXT>Network updated</TEXT>
+    <ITEM_LIST>
+      <ITEM>
+        <KEY>id</KEY>
+        <VALUE>1103</VALUE>
+      </ITEM>
+      <ITEM>
+        <KEY>name</KEY>
+        <VALUE>Network 123</VALUE>
+      </ITEM>
+    </ITEM_LIST>
+  </RESPONSE>
+</SIMPLE_RETURN>
