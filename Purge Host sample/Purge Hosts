@@ -1,0 +1,20 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST "action=purge&ips=10.113.195.195"
+"https://qualysapi.qualys.com/api/2.0/fo/asset/host/"
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE BATCH_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/batch_return.dtd">
+<BATCH_RETURN>
+ <RESPONSE>
+   <DATETIME>2018-04-24T10:26:14Z</DATETIME>
+   <BATCH_LIST>
+     <BATCH>
+       <TEXT>Hosts Queued for Purging</TEXT>
+       <ID_SET>
+         <ID>5442340</ID>
+       </ID_SET>
+     </BATCH>
+   </BATCH_LIST>
+ </RESPONSE>
+</BATCH_RETURN>
