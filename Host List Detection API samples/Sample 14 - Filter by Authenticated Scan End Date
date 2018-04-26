@@ -1,4 +1,4 @@
 Sample 14 - Filter by Authenticated Scan End Date
 
 nterested in authenticated scans? Use the “vm_auth_scan_date_before” and “vm_auth_scan_date_after” parameters to request a list of hosts with successful authenticated vulnerability scans that ended before or after a certain date/time. In this example, I want to return hosts with a successful authenticated scan that ended after October 31st and before December 31st. 
-curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&vm_auth_scan_date_after=2016-10-31&vm_auth_scan_date_before=2016-12-31"
+curl -u "username:password" -H "X-Requested-With: curl" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/?action=list&vm_auth_scan_date_after=2017-10-31&vm_auth_scan_date_before=2017-12-31"
