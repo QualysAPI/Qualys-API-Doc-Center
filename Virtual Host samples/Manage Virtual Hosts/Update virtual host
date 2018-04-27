@@ -1,0 +1,13 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST "action=update&ip=10.10.25.212&port=80&fqdn=www.abcdef.com" "https://qualysapi.qualys.com/api/2.0/f
+o/asset/vhost/"
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SIMPLE_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/simple_return.dtd">
+<SIMPLE_RETURN>
+ <RESPONSE>
+   <DATETIME>2018-04-27T08:45:36Z</DATETIME>
+   <TEXT>Virtual host successfully updated.</TEXT>
+ </RESPONSE>
+</SIMPLE_RETURN> 
