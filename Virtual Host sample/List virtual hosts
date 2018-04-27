@@ -1,0 +1,23 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST "https://qualysapi.qualys.com/api/2.0/fo/asset/vhost/?action=list"
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE VIRTUAL_HOST_LIST_OUTPUT SYSTEM "https://qualysapi.qualys.com/api/2.0/fo/asset/vhost/vhost_list_output.dtd">
+<VIRTUAL_HOST_LIST_OUTPUT>
+  <RESPONSE>
+    <DATETIME>2018-04-26T11:20:42Z</DATETIME>
+    <VIRTUAL_HOST_LIST>
+      <VIRTUAL_HOST>
+        <IP>10.11.65.3</IP>
+        <PORT>255</PORT>
+        <FQDN>asadfsadf-123.com</FQDN>
+      </VIRTUAL_HOST>
+      <VIRTUAL_HOST>
+        <IP>10.11.65.5</IP>
+        <PORT>246</PORT>
+        <FQDN>asdfsahydk.com</FQDN>
+      </VIRTUAL_HOST>
+    </VIRTUAL_HOST_LIST>
+  </RESPONSE>
+</VIRTUAL_HOST_LIST_OUTPUT>
