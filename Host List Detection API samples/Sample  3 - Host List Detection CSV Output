@@ -7,12 +7,13 @@ Sample CSV output:
 ----BEGIN_RESPONSE_HEADER_CSV
 ----END_RESPONSE_HEADER_CSV
 ----BEGIN_RESPONSE_BODY_CSV
-"Host ID","IP Address","Tracking Method","Operating System","DNS Name","Netbios Name","Last Scan Datetime","OS CPE","Last VM Scanned Date","Last VM Scanned Duration","Last VM Auth Scanned Date","Last VM Auth Scanned Duration","Last PC Scanned Date","QID","Type","Port","Protocol","FQDN","SSL","Instance","Status","Severity","First Found Datetime","Last Found Datetime","Last Test Datetime","Last Update Datetime","Last Fixed Datetime","Results","Ignored","Disabled","Times Found","Service"
-"5641287","10.10.10.28","IP","Windows XP","xpsp3-10-28","XPSP3-10-28","2016-12-20T20:59:05Z",,"2016-12-20T20:59:05Z","260",,,"2016-12-20T20:46:17Z","38094","Potential","3389","tcp",,"0",,"Active","2","2016-09-27T09:13:49Z","2016-12-20T20:59:05Z","2016-12-20T20:59:05Z","2016-12-20T20:52:34Z",,"Detected service win_remote_desktop and os WINDOWS XP SERVICE PACK 2-3","0","0","48",
-"5641287","10.10.10.28","IP","Windows XP","xpsp3-10-28","XPSP3-10-28","2016-12-20T20:59:05Z",,"2016-12-20T20:59:05Z","260",,,"2016-12-20T20:46:17Z","38252","Confirmed",,,,"0",,"Active","2","2016-09-27T09:13:49Z","2016-12-20T20:59:05Z","2016-12-20T20:59:05Z","2016-12-20T20:52:34Z",,"Detected on TCP port 23.","0","0","48",
-"5641288","10.10.30.159","IP","Linux 2.4-2.6 / Embedded Device / F5 Networks Big-IP / Linux 2.6",,,"2016-12-20T21:06:59Z",,"2016-12-20T21:06:59Z","734","2016-09-27T10:20:52Z","272",,"15034","Confirmed","53","udp",,"0",,"Active","2","2016-09-27T09:29:21Z","2016-12-20T21:06:59Z","2016-12-20T21:06:59Z","2016-12-20T21:01:55Z",,"Server supports recursive name resolution to IPv4 addresses.
-Server supports recursive name resolution to IPv6 addresses.","0","0","43",
-"5641290","10.11.72.21","IP","Windows 10 Enterprise","qwbw10es-72-21","QWBW10ES-72-21","2016-12-19T20:52:07Z",,"2016-12-19T20:51:11Z","284",,,"2016-12-20T20:46:17Z","38628","Confirmed","3389","tcp",,"1",,"Active","3","2016-09-27T09:29:21Z","2016-12-19T20:51:11Z","2016-12-19T20:51:11Z","2016-12-19T20:53:25Z",,"TLSv1.0 is supported","0","0","29",
+Host ID,IP Address,Tracking Method,Operating System,DNS Name,Netbios Name,QG HostID,Last Scan Datetime,OS CPE,Last VM Scanned Date,Last VM Scanned Duration,Last VM Auth Scanned Date,Last VM Auth Scanned Duration,Last PC Scanned Date,QID,Type,Port,Protocol,FQDN,SSL,Instance,Status,Severity,First Found Datetime,Last Found Datetime,Last Test Datetime,Last Update Datetime,Last Fixed Datetime,Results,Ignored,Disabled,Times Found,Service,Last Processed Datetime
+6506432,10.10.10.11,IP,Windows 2008 R2 Enterprise Service Pack 1,2k8r2-u-10-11,2K8R2-U-10-11,,2018-04-13T03:49:05Z,,2018-04-13T03:48:50Z,352,,,,38170,Confirmed,3389,tcp,,1,,Active,2,2018-01-26T04:45:50Z,2018-04-13T03:48:50Z,2018-04-13T03:48:50Z,2018-04-13T03:49:05Z,,Certificate 0 CN=2k8r2-u-10-11 (2k8r2-u-10-11) doesn't resolve,0,0,111,,2018-04-13T03:49:05Z
+6506432,10.10.10.11,IP,Windows 2008 R2 Enterprise Service Pack 1,2k8r2-u-10-11,2K8R2-U-10-11,,2018-04-13T03:49:05Z,,2018-04-13T03:48:50Z,352,,,,38173,Confirmed,3389,tcp,,1,,Active,2,2018-01-26T04:45:50Z,2018-04-13T03:48:50Z,2018-04-13T03:48:50Z,2018-04-13T03:49:05Z,,Certificate 0 CN=2k8r2-u-10-11 unable to get local issuer certificate,0,0,111,,2018-04-13T03:49:05Z
+6506432,10.10.10.11,IP,Windows 2008 R2 Enterprise Service Pack 1,2k8r2-u-10-11,2K8R2-U-10-11,,2018-04-13T03:49:05Z,,2018-04-13T03:48:50Z,352,,,,38601,Confirmed,3389,tcp,,1,,Active,2,2018-01-26T04:45:50Z,2018-04-13T03:48:50Z,2018-04-13T03:48:50Z,2018-04-13T03:49:05Z,,"CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+TLSv1 WITH RC4 CIPHERs IS SUPPORTED	 	 	 	 	 
+RC4-SHA	RSA	RSA	SHA1	RC4(128)	MEDIUM
+RC4-MD5	RSA	RSA	MD5	RC4(128)	MEDIUM",0,0,111,,2018-04-13T03:49:05Z
 ----END_RESPONSE_BODY_CSV
 ----BEGIN_RESPONSE_FOOTER_CSV
 "Status Message"
