@@ -1,6 +1,6 @@
 API request:
-curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST "action=add_fqdn&ip=10.10.25.212&port=80&fqdn=www.abc123abc.com" "https://qualysapi.qualys.com/api/
-2.0/fo/asset/vhost/"
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST 
+"action=add_fqdn&ip=10.10.25.212&port=80&fqdn=www.abc123abc.com" "https://qualysapi.qualys.com/api/2.0/fo/asset/vhost/"
 
 XML output:
 <?xml version="1.0" encoding="UTF-8" ?>
