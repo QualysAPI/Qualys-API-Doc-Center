@@ -1,0 +1,21 @@
+API request:
+curl -u "USERNAME:PASSWORD" -H "X-Requested-With:curl" -X POST 
+"action=update&ids=1310338&title=API_v2_utwrx_mp_Windows_Update_1&username=UserUpdated&password=PassUpdated&
+comments=Updated through API v2.0&echo_request=1&add_ips=10.10.10.202&remove_ips=10.10.10.200&ntlmv2=0" "https://qualysapi.qualys.com/api/2.0/fo/auth/windows/"                
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE BATCH_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/batch_return.dtd">
+<BATCH_RETURN>
+  <RESPONSE>
+   <DATETIME>2018-04-30T09:28:43Z</DATETIME>
+   <BATCH_LIST>
+     <BATCH>
+       <TEXT>Successfully Updated</TEXT>
+       <ID_SET>
+         <ID>1310338</ID>
+       </ID_SET>
+     </BATCH>
+   </BATCH_LIST>
+ </RESPONSE>
+</BATCH_RETURN>
