@@ -2,7 +2,7 @@ Sample - List Unix Record with vault, root delegations, private-key certificates
 
 API request:
 curl -u "USERNAME:PASSWORD" -X "GET" -H "Content-Type: text/xml"
-"https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?action=list"
+"https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?action=list&ids=1116826922"
 
 XML output:
 <?xml version="1.0" encoding="UTF-8" ?>
