@@ -1,0 +1,43 @@
+Sample 3 - Unix Record DSA authentication (Non-encrypted)
+
+API request:
+curl -H "X-Requested-With: curl demo" -H "Content-type: text/xml" -u USERNAME:PASSWORD -X POST
+"https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?
+action=create&title=Auth_Private_Key&username=root&ips=10.20.31.244"
+--data-binary @add_pk_Valid.xml
+
+POST Data Request (Contents of add_pk_Valid.xml):
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <PRIVATE_KEY_CERTIFICATES>
+        <PRIVATE_KEY_CERTIFICATE>
+           <PRIVATE_KEY_INFO type="basic">
+                <PRIVATE_KEY type="dsa">
+<![CDATA[-----BEGIN DSA PRIVATE KEY-----
+MIIBugIBAAKBgQCBbVl2OJB3e8PHLBDxtZZHbop7fuyyP/LT0mFHjqUxDXWCVlFU
+8k7uiYkZwhq2qYybx4/NmbCYKhqLfoQqcI3OAoA+1II6lOkwhCRPX6fsnUibZiRQ
+E4ovzZmr4JQ+gNRdpdeXMqvKuYGs3jkrJCCwA/NPaSTBbDYh5KRbRtAa0wIVAIai
+...
+HQejdR3+RvJgYZ90NeyUakb/mI+2aMJZChWWiPzNax4cLez+eDYuJoX/d3V3FEwo
+s1czdc1ubhco++DutAauyRN3lAFhd+n7J53ZyuDx+UkgxJU+K6MVxQIUOe6QwZTP
+3dIZGq43D5BAbOrjJAI=
+-----END DSA PRIVATE KEY-----]]></PRIVATE_KEY>
+	    </PRIVATE_KEY_INFO>
+        </PRIVATE_KEY_CERTIFICATE>
+    </PRIVATE_KEY_CERTIFICATES>
+</UNIX_AUTH_PARAMS>
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE BATCH_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/batch_return.dtd"> 
+<BATCH_RETURN> 
+ <RESPONSE> 
+   <DATETIME>2017-04-19T14:58:49Z</DATETIME> 
+    <BATCH_LIST> 
+     <BATCH> 
+       <TEXT>Successfully Created</TEXT> 
+       <ID_SET><ID>80729</ID></ID_SET> 
+     </BATCH> 
+   </BATCH_LIST> 
+ </RESPONSE> 
+</BATCH_RETURN>
