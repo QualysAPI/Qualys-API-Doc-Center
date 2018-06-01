@@ -1,0 +1,24 @@
+(Applies to record type Unix only) Use an update request including XML binary data like this:
+curl -H "X-Requested-With: curl" -H "Content-type:text/xml" 
+-u "USERNAME:PASSWORD” -X "POST" "https://qualysapi.qualys.com/api/2.0/fo/auth/unix/action=update&id=1234567" --data-binary @edit_params.xml
+
+Root tools in file binary_input_params.xml will be added. Any existing root tools will be deleted from the Unix record.
+where edit_params.xml is:
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <ROOT_TOOLS>
+        <ROOT_TOOL>
+            <ID>140016922</ID>
+            <STANDARD_TYPE type="pimsu"/>
+            <PASSWORD_INFO type="vault">
+                <DIGITAL_VAULT>
+                    <VAULT_USERNAME><![CDATA[root]]></VAULT_USERNAME>
+                    <VAULT_TYPE>Thycotic Secret Server</VAULT_TYPE>
+                    <VAULT_ID>25026922</VAULT_ID>
+                    <SECRET_NAME><![CDATA[super_secret_name]]></SECRET_NAME>
+                </DIGITAL_VAULT>
+            </PASSWORD_INFO>
+        </ROOT_TOOL>
+        <!-- in add_root_tools.xml we had created two root-tools; here we are specifying only one item to edit, so the other record will be deleted! -->
+    </ROOT_TOOLS>
+</UNIX_AUTH_PARAMS>
