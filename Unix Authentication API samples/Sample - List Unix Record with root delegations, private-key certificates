@@ -1,0 +1,112 @@
+Sample - List Unix Record with vault, root delegations, private-key certificates
+
+API request:
+curl -u "USERNAME:PASSWORD" -X "GET" -H "Content-Type: text/xml"
+"https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?action=list"
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AUTH_UNIX_LIST_OUTPUT SYSTEM "https://qualysapi.qualys.com/api/2.0/fo/auth/unix/auth_unix_list_output.dtd">
+<AUTH_UNIX_LIST_OUTPUT>
+    <RESPONSE>
+        <DATETIME>2016-09-01T15:59:40Z</DATETIME>
+        <AUTH_UNIX_LIST>
+            <AUTH_UNIX>
+                <ID>1116826922</ID>
+                <TITLE>
+                    <![CDATA[ssh2 record]]>
+                </TITLE>
+                <USERNAME>
+                    <![CDATA[root]]>
+                </USERNAME>
+                <SKIP_PASSWORD>1</SKIP_PASSWORD>
+                <ROOT_TOOL_INFO_LIST>
+                    <ROOT_TOOL_INFO>
+                        <ID>100016922</ID>
+                        <ROOT_TOOL>PowerBroker</ROOT_TOOL>
+                        <PASSWORD_INFO type="vault">
+                            <DIGITAL_VAULT>
+                                <DIGITAL_VAULT_ID>
+                                    <![CDATA[25026922]]>
+                                </DIGITAL_VAULT_ID>
+                                <DIGITAL_VAULT_TYPE>
+                                    <![CDATA[CyberArk PIM Suite]]>
+                                </DIGITAL_VAULT_TYPE>
+                                <DIGITAL_VAULT_TITLE>
+                                    <![CDATA[CyberArk]]>
+                                </DIGITAL_VAULT_TITLE>
+                                <VAULT_USERNAME>
+                                    <![CDATA[aaa]]>
+                                </VAULT_USERNAME>
+                                <VAULT_FOLDER>
+                                    <![CDATA[aaa]]>
+                                </VAULT_FOLDER>
+                                <VAULT_FILE>
+                                    <![CDATA[bbb]]>
+                                </VAULT_FILE>
+                            </DIGITAL_VAULT>
+                        </PASSWORD_INFO>
+                    </ROOT_TOOL_INFO>
+                    <ROOT_TOOL_INFO>
+                        <ID>100006922</ID>
+                        <ROOT_TOOL>PowerBroker</ROOT_TOOL>
+                        <PASSWORD_INFO type="basic" />
+                    </ROOT_TOOL_INFO>
+                </ROOT_TOOL_INFO_LIST>
+                <PRIVATE_KEY_CERTIFICATE_LIST>
+                    <PRIVATE_KEY_CERTIFICATE>
+                        <ID>70016922</ID>
+                        <PRIVATE_KEY_INFO type="vault">
+                            <DIGITAL_VAULT>
+                                <DIGITAL_VAULT_ID>
+                                    <![CDATA[25026922]]>
+                                </DIGITAL_VAULT_ID>
+                                <DIGITAL_VAULT_TYPE>
+                                    <![CDATA[CyberArk PIM Suite]]>
+                                </DIGITAL_VAULT_TYPE>
+                                <DIGITAL_VAULT_TITLE>
+                                    <![CDATA[CyberArk]]>
+                                </DIGITAL_VAULT_TITLE>
+                                <VAULT_FOLDER>
+                                    <![CDATA[fff]]>
+                                </VAULT_FOLDER>
+                                <VAULT_FILE>
+                                    <![CDATA[gggg]]>
+                                </VAULT_FILE>
+                            </DIGITAL_VAULT>
+                        </PRIVATE_KEY_INFO>
+                        <PASSPHRASE_INFO type="basic" />
+                        <CERTIFICATE type="x.509" />
+                    </PRIVATE_KEY_CERTIFICATE>
+                    <PRIVATE_KEY_CERTIFICATE>
+                        <ID>70006922</ID>
+                        <PRIVATE_KEY_INFO type="basic">
+                            <PRIVATE_KEY type="rsa" />
+                        </PRIVATE_KEY_INFO>
+                        <PASSPHRASE_INFO type="basic" />
+                        <CERTIFICATE type="openssh" />
+                    </PRIVATE_KEY_CERTIFICATE>
+                </PRIVATE_KEY_CERTIFICATE_LIST>
+                <PORT>22, 23</PORT>
+                <IP_SET>
+                    <IP>10.10.35.253</IP>
+                </IP_SET>
+                <NETWORK_ID>0</NETWORK_ID>
+                <CREATED>
+                    <DATETIME>2016-09-01T09:22:01Z</DATETIME>
+                    <BY>quays_as11</BY>
+                </CREATED>
+                <LAST_MODIFIED>
+                    <DATETIME>2016-09-01T15:59:00Z</DATETIME>
+                </LAST_MODIFIED>
+                <COMMENTS>
+                    <![CDATA[my record comments]]>
+                </COMMENTS>
+                <USE_AGENTLESS_TRACKING>1</USE_AGENTLESS_TRACKING>
+                <AGENTLESS_TRACKING_PATH>
+                    <![CDATA[/usr/local]]>
+                </AGENTLESS_TRACKING_PATH>
+            </AUTH_UNIX>
+        </AUTH_UNIX_LIST>
+    </RESPONSE>
+</AUTH_UNIX_LIST_OUTPUT>
