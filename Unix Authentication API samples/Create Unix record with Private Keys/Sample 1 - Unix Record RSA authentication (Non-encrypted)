@@ -1,4 +1,5 @@
 Sample 1 - Unix Record RSA authentication (Non-encrypted)
+
 API request:
 curl -H "X-Requested-With: curl demo" -H "Content-type: text/xml" -u USERNAME:PASSWORD -X POST
 "https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?
