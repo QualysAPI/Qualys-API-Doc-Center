@@ -1,0 +1,27 @@
+Sample 4 - Unix Record Delete root delegation and private-key certificates
+
+(Applies to record type Unix only) Use a Unix record update request including XML binary data like this:
+curl -H "X-Requested-With: curl" -H "Content-type:text/xml" 
+-u "USERNAME:PASSWORD" -X "POST" "https://qualysapi.qualys.com/api/2.0/fo/auth/unix/action=update&id=1234567" --data-binary @delete_params.xml
+
+Delete all root delegations:
+where delete_params.xml is:
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+   <ROOT_TOOLS></ROOT_TOOLS>
+</UNIX_AUTH_PARAMS>
+
+Delete all private-key certificates:
+where delete_params.xml is:
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <PRIVATE_KEY_CERTIFICATES></PRIVATE_KEY_CERTIFICATES>
+</UNIX_AUTH_PARAMS>
+
+Delete all private-key certificates and root delegations:
+where delete_params.xml is:
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <ROOT_TOOLS></ROOT_TOOLS>
+    <PRIVATE_KEY_CERTIFICATES></PRIVATE_KEY_CERTIFICATES>
+</UNIX_AUTH_PARAMS>
