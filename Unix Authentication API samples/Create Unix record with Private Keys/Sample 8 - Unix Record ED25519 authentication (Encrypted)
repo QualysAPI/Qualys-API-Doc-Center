@@ -1,0 +1,47 @@
+Sample 8 - Unix Record ED25519 authentication (Encrypted) 
+
+API request:
+curl -H "X-Requested-With: curl demo" -H "Content-type: text/xml" -u USERNAME:PASSWORD -X POST
+"https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?
+action=create&title=Auth_Private_Key&username=root&ips=10.20.31.244"
+--data-binary @add_pk_Valid.xml
+
+POST Data Request (Contents of add_pk_Valid.xml)
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <PRIVATE_KEY_CERTIFICATES>
+        <PRIVATE_KEY_CERTIFICATE>
+            <PRIVATE_KEY_INFO type="basic">
+                <PRIVATE_KEY type="ed25519">
+<![CDATA[-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jYmMAAAAGYmNyeXB0AAAAGAAAABAszHwIYP
+g2XSX6PQCAWxxzAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAII37ri31dHt8Tk71
+fyLOXOQJ3FFzL8G+VridaHs43aUbAAAAoCKqy7tDvxpcvo8Yl11AO614KHMfsI6OGFtpUM
+WpOoE8XLepoVGzvOJvlBlcKLKasmuMO2FODN0iBedu4AnUUfbIaUpyb/AiIu2XQwjTT+LE
+s1u9T94h41ohOZQ5indnXBy6w0iko49wgZXzCl536ZTVsxNTGH/ZBrmqSgmEJAoF8AE40W
+RL6WvTy1npDh7pOZCD40JkXS6vxc7hvRRqNCQ=
+-----END OPENSSH PRIVATE KEY-----]]></PRIVATE_KEY>
+	    </PRIVATE_KEY_INFO>
+	    <PASSPHRASE_INFO type="basic">
+                <PASSPHRASE><![CDATA[12345]]></PASSPHRASE>
+            </PASSPHRASE_INFO>
+        </PRIVATE_KEY_CERTIFICATE>
+    </PRIVATE_KEY_CERTIFICATES>
+</UNIX_AUTH_PARAMS>
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE BATCH_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/batch_return.dtd"> 
+<BATCH_RETURN> 
+ <RESPONSE> 
+   <DATETIME>2017-04-19T14:58:49Z</DATETIME> 
+    <BATCH_LIST> 
+     <BATCH> 
+       <TEXT>Successfully Created</TEXT> 
+       <ID_SET> 
+         <ID>80729</ID> 
+       </ID_SET> 
+     </BATCH> 
+   </BATCH_LIST> 
+ </RESPONSE> 
+</BATCH_RETURN>
