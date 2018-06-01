@@ -1,0 +1,47 @@
+Sample 6 - Unix Record ECDSA authentication (Encrypted)
+
+API request:
+curl -H "X-Requested-With: curl demo" -H "Content-type: text/xml" -u USERNAME:PASSWORD -X POST
+"https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?
+action=create&title=Auth_Private_Key&username=root&ips=10.20.31.244"
+--data-binary @add_pk_Valid.xml
+
+POST Data Request (Contents of add_pk_Valid.xml):
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <PRIVATE_KEY_CERTIFICATES>
+        <PRIVATE_KEY_CERTIFICATE>
+            <PRIVATE_KEY_INFO type="basic">
+                <PRIVATE_KEY type="ecdsa">
+<![CDATA[-----BEGIN EC PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: AES-128-CBC,519724814D193C308249D9EA36104118
+
+VfvH3paq+P8UWCvhg0t40VWBpw9gHDtiVwphVXmaSxiEJhwddwjOFsM5ulqZeHfV
+/lfegkRGdv7OIdV8sze2bAx17OlEWChrOuWrNqiw8KhrkHbFKS3maI6sR85rQIgM
+ROQ7TMfuXJ86ry54jp+goRvdxCL7q6FGIfgayHTxfRM=
+-----END EC PRIVATE KEY-----]]></PRIVATE_KEY>
+	    </PRIVATE_KEY_INFO>
+	    <PASSPHRASE_INFO type="basic">
+                <PASSPHRASE><![CDATA[12345]]></PASSPHRASE>
+            </PASSPHRASE_INFO>
+        </PRIVATE_KEY_CERTIFICATE>
+    </PRIVATE_KEY_CERTIFICATES>
+</UNIX_AUTH_PARAMS>
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE BATCH_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/batch_return.dtd"> 
+<BATCH_RETURN> 
+ <RESPONSE> 
+   <DATETIME>2017-04-19T14:58:49Z</DATETIME> 
+    <BATCH_LIST> 
+     <BATCH> 
+       <TEXT>Successfully Created</TEXT> 
+       <ID_SET> 
+         <ID>80729</ID> 
+       </ID_SET> 
+     </BATCH> 
+   </BATCH_LIST> 
+ </RESPONSE> 
+</BATCH_RETURN>
