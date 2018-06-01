@@ -1,0 +1,47 @@
+Sample 1 - Unix Record RSA authentication (Non-encrypted)
+API request:
+curl -H "X-Requested-With: curl demo" -H "Content-type: text/xml" -u USERNAME:PASSWORD -X POST
+"https://qualysapi.qualys.com/api/2.0/fo/auth/unix/?
+action=create&title=Auth_Private_Key&username=root&ips=10.20.31.244"
+--data-binary @add_pk_Valid.xml
+
+POST Data Request (Contents of add_pk_Valid.xml)
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <PRIVATE_KEY_CERTIFICATES>
+        <PRIVATE_KEY_CERTIFICATE>
+            <PRIVATE_KEY_INFO type="basic">
+                <PRIVATE_KEY type="rsa">
+<![CDATA[-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAsOYRHrZjV6QuC5uaR6EeO3Qw3M5mzgei+6o8TEIN/dAY/aVw
+4Sw6h+YKfzuSxmAmwsRWmswUTB7BbY4Kg/h/6GFZuX/a3u9VTgg23mST3tWcGieJ
+AsCLK5Fh6pxrgheMuqrUIs2T5iJ688n1VF/UveI0OkfcEhBOt0X0At1F8rl6G1EP
+C5WEk+4HG3F03iYrm7t/ehnJlGg6k7QAnSi0FwExfcAk+LUzk+3C6MXIxADnHT1e
+YtIkNK2ptssf489pm7j/V/4DOTKsgXq505BTYzQyKBUXsy7qiyg11RcgExNi/++J
+...
+9gklhwZ6hfuIw1GtZkYBoN5qKBLFytw8VTWqmH/QvPKGrdxMHV6MoTtuLBKxmpRz
+q2KBAoGBALNNrtixyALuxvk3BjYewygPPyguV4Z1p5BglPkB0bOqCIhY1ukBjuf/
+jCp0wuY+DdahHeLw9FK6L8GzmnB81zpuSMxM6NZHlxA+ylsw7pR2TCnees6JQ5J4
+CqhNu2tprpTGm4KzFG8OXa0BJcC9KUOuhVDAbFUs1A+o56JcWzNs
+-----END RSA PRIVATE KEY-----]]></PRIVATE_KEY>
+	    </PRIVATE_KEY_INFO>
+    </PRIVATE_KEY_CERTIFICATE>
+  </PRIVATE_KEY_CERTIFICATES>
+</UNIX_AUTH_PARAMS>
+
+XML output:
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE BATCH_RETURN SYSTEM "https://qualysapi.qualys.com/api/2.0/batch_return.dtd"> 
+<BATCH_RETURN> 
+ <RESPONSE> 
+   <DATETIME>2017-04-19T14:58:49Z</DATETIME> 
+    <BATCH_LIST> 
+     <BATCH> 
+       <TEXT>Successfully Created</TEXT> 
+       <ID_SET> 
+         <ID>80729</ID> 
+       </ID_SET> 
+     </BATCH> 
+   </BATCH_LIST> 
+ </RESPONSE> 
+</BATCH_RETURN>
