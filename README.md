@@ -4,3 +4,6 @@ Welcome! We're sharing some API samples and user documentation to help you with 
 
 Looking for our latest API user guides? Visit https://www.qualys.com/documentation/
 
+Qualys Documentation Team
+www.qualys.com
+
