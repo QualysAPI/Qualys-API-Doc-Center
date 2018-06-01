@@ -1,0 +1,67 @@
+Sample 3 - Unix Record Edit root delegation and private-key certificates
+
+(Applies to record type Unix only) Use an update request including XML binary data like this:
+curl -H "X-Requested-With: curl" -H "Content-type:text/xml" 
+-u "USERNAME:PASSWORD” -X "POST" "https://qualysapi.qualys.com/api/2.0/fo/auth/unix/action=update&id=1234567" --data-binary @edit_params.xml
+
+Edit root tools and private-key certificates:
+Root tools and private-key certificates in file binary_input_params.xml will be added. Any existing private-key certificates and/or root tools will be deleted from the Unix record.
+where edit_params.xml is:
+<?xml version="1.0" encoding="UTF-8" ?>
+<UNIX_AUTH_PARAMS>
+    <ROOT_TOOLS>
+        <ROOT_TOOL>
+            <ID>140016922</ID>
+            <STANDARD_TYPE type="pimsu"/>
+            <PASSWORD_INFO type="vault">
+                <DIGITAL_VAULT>
+                    <VAULT_USERNAME><![CDATA[root]]></VAULT_USERNAME>
+                    <VAULT_TYPE>Thycotic Secret Server</VAULT_TYPE>
+                    <VAULT_ID>25026922</VAULT_ID>
+                   <SECRET_NAME><![CDATA[super_secret_name]]></SECRET_NAME>
+                </DIGITAL_VAULT>
+            </PASSWORD_INFO>
+        </ROOT_TOOL>
+    </ROOT_TOOLS>
+    <PRIVATE_KEY_CERTIFICATES>
+        <PRIVATE_KEY_CERTIFICATE>
+            <ID>110066922</ID>
+            <PRIVATE_KEY_INFO type="vault">
+                <DIGITAL_VAULT>
+                    <VAULT_TYPE>CyberArk AIM</VAULT_TYPE>
+                    <VAULT_ID>25026922</VAULT_ID>
+                    <FOLDER><![CDATA[folder]]></FOLDER>
+                    <FILE><![CDATA[file]]></FILE>
+                </DIGITAL_VAULT>
+            </PRIVATE_KEY_INFO>
+            <PASSPHRASE_INFO type="basic">
+                <PASSPHRASE><![CDATA[passphrase]]></PASSPHRASE>
+            </PASSPHRASE_INFO>
+        </PRIVATE_KEY_CERTIFICATE>
+        <PRIVATE_KEY_CERTIFICATE>
+            <ID>110076922</ID>
+            <PRIVATE_KEY_INFO type="basic">
+                <PRIVATE_KEY type="rsa"><![CDATA[-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: AES-128-CBC,F9A653E2D12E019357B349B6EEE068B1
+FiLfGHOc0rREmC0cBPsiyqqaitPNYTGeqKRmSBwGNrAzNTAcsKslsoY/WkMDW6QD
+dLZNiGB0CFag94zyoMyCjyrdpayACAOWfH5w8VixxHF16Vxx5b6foLBE40FOYAIP
+sdm1HvCfSFaN2dPf1Unb0erwjigjJNwYIV78529elE+2+dZIemi90ibh0R35NB60
+TLeS3UUVezp/O9ZPLf0pqPPHnWgfW4GXp/SUpwojES9fCQE+BW4MMWHWu8XKtytt
+...
+
+-----END RSA PRIVATE KEY-----]]></PRIVATE_KEY>
+            </PRIVATE_KEY_INFO>
+            <PASSPHRASE_INFO type="vault">
+                <DIGITAL_VAULT>
+                    <VAULT_USERNAME><![CDATA[PASSPHRASE USERNAME]]></VAULT_USERNAME>
+                    <VAULT_TYPE>Quest Vault</VAULT_TYPE>
+                    <VAULT_ID>35046922</VAULT_ID>                    <SYSTEM_NAME><![CDATA[quest_system_name]]></SYSTEM_NAME>
+                </DIGITAL_VAULT>
+            </PASSPHRASE_INFO>
+            <CERTIFICATE type="openssh">
+                <![CDATA[ssh-rsa-cert-v01@openssh.com AAAAHHNzaC1yc2EtY2VydC12MDFAb3BlbnNzaC5jb20AAAAgwR4bJSiBtJlOgCAQUF3yZ6Io2WYfnBiOEsQ45RKbqLgAAAADAQABAAABAQC5sVLb7emh8/v2uHp6x1pN5R+MHQwz3A5M3GRKtuuu1Njc/XYgqeWLMOJpbVtCVXwUcPgKt4Q0DmlGqc4uhZhzrdtpQGHrEi...
+            </CERTIFICATE>
+        </PRIVATE_KEY_CERTIFICATE>
+    </PRIVATE_KEY_CERTIFICATES>
+</UNIX_AUTH_PARAMS>
