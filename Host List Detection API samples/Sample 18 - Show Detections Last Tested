@@ -1,0 +1,14 @@
+Request detections last tested before July 15, 2018:
+curl -H "X-Requested-With:curl demo2" -u "user:password" -d "action=list&network_ids=1000&status=Active,Fixed,New,Re-Opened&ips=10.10.10.10&detection_last_tested_before=2018-07-15" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/"
+
+Request detections last tested in the past 185 days:
+curl -H "X-Requested-With:curl demo2" -u "user:password" -d "action=list&network_ids=1000&status=Active,Fixed,New,Re-Opened&ips=10.10.10.7&detection_last_tested_since_days=185" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/"
+
+Request detections last tested on or after August 1, 2018:
+curl -H "X-Requested-With:curl demo2" -u "user:password" -d "action=list&network_ids=1000&status=Active,Fixed,New,Re-Opened&ips=10.10.10.7&detection_last_tested_since=2018-08-01" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/"
+
+Request detections last tested between August 1st and October 1st:
+curl -H "X-Requested-With:curl demo2" -u "user:password" -d "action=list&network_ids=1000&status=Active,Fixed,New,Re-Opened&ips=10.10.10.7&detection_last_tested_since=2018-08-01&detection_last_tested_before=2018-10-01" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/
+
+Request detections last tested between 15 days ago through 30 days ago:
+curl -H "X-Requested-With:curl demo2" -u "user:password" -d "action=list&network_ids=1000&status=Active,Fixed,New,Re-Opened&ips=10.10.10.7&detection_last_tested_since_days=30&detection_last_tested_before_days=15" "https://qualysapi.qualys.com/api/2.0/fo/asset/host/vm/detection/
